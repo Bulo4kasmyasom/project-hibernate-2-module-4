@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 import java.util.Set;
 
 @Entity
-@Table(schema ="movie",  name = "category")
+@Table(schema = "movie", name = "category")
 public class Category {
     @Id
     @Column(name = "category_id")

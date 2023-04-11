@@ -19,14 +19,14 @@ public enum Feature {
         return value;
     }
 
-    public static Feature getFeatureByValue(String value){
+    public static Feature getFeatureByValue(String value) {
         if (isNull(value) || value.isEmpty()) {
             return null;
         }
 
         Feature[] features = Feature.values();
         for (Feature feature : features) {
-            if(feature.value.equals(value)){
+            if (feature.value.equals(value)) {
                 return feature;
             }
         }

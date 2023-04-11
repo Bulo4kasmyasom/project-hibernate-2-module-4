@@ -8,11 +8,10 @@ import org.hibernate.cfg.Configuration;
 public final class HibernateConnector {
     private static HibernateConnector instance;
     private final SessionFactory sessionFactory;
-    private final Configuration configuration;
 
     private HibernateConnector() {
         try {
-            configuration = new Configuration();
+            Configuration configuration = new Configuration();
             configuration.setPhysicalNamingStrategy(new CamelCaseToUnderscoresNamingStrategy());
 
             sessionFactory = configuration
@@ -32,7 +31,6 @@ public final class HibernateConnector {
                     .addAnnotatedClass(Store.class)
                     .buildSessionFactory();
         } catch (Exception e) {
-            e.printStackTrace();
             throw new RuntimeException(e.getMessage());
         }
     }

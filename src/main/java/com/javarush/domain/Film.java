@@ -162,12 +162,12 @@ public class Film {
     }
 
     public Set<Feature> getSpecialFeatures() {
-        if (isNull(specialFeatures) || specialFeatures.isEmpty()){
+        if (isNull(specialFeatures) || specialFeatures.isEmpty()) {
             return null;
         }
         Set<Feature> result = new HashSet<>();
         String[] features = specialFeatures.split(",");
-        for (String feature : features){
+        for (String feature : features) {
             result.add(Feature.getFeatureByValue(feature));
         }
         result.remove(null);
@@ -175,7 +175,7 @@ public class Film {
     }
 
     public void setSpecialFeatures(Set<Feature> features) {
-        if (isNull(features)){
+        if (isNull(features)) {
             specialFeatures = null;
         } else {
             specialFeatures = features.stream().map(Feature::getValue).collect(Collectors.joining(","));
